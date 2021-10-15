@@ -7,23 +7,23 @@ import TodoItemCreator from './TodoItemCreator'
 
 const filteredTodoListState = selector({
   key: 'filteredTodoListState',
-  get: ({get}) => {
-    const filter = get(todoListFilterState);
-    const list = get(todoListState);
+  get: ({ get }) => {
+    const filter = get(todoListFilterState)
+    const list = get(todoListState)
 
     switch (filter) {
       case 'Show Completed':
-        return list.filter((item) => item.isComplete);
+        return list.filter((item) => item.isComplete)
       case 'Show Uncompleted':
-        return list.filter((item) => !item.isComplete);
+        return list.filter((item) => !item.isComplete)
       default:
-        return list;
+        return list
     }
   }
 })
 
 const TodoList = () => {
-  const todoList = useRecoilValue(filteredTodoListState);
+  const todoList = useRecoilValue(filteredTodoListState)
 
   return (
     <>
@@ -38,4 +38,4 @@ const TodoList = () => {
   )
 }
 
-export default TodoList;
+export default TodoList

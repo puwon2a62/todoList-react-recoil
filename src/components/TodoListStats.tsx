@@ -3,12 +3,12 @@ import { todoListState } from './TodoListStates'
 
 const todoListStatsState = selector({
   key: 'todoListStatsState',
-  get: ({get}) => {
-    const todoList = get(todoListState);
-    const totalNum = todoList.length;
-    const totalCompletedNum = todoList.filter((item) => item.isComplete).length;
-    const totalUncompletedNum = totalNum - totalCompletedNum;
-    const percentCompleted = totalNum === 0 ? 0 : totalCompletedNum / totalNum;
+  get: ({ get }) => {
+    const todoList = get(todoListState)
+    const totalNum = todoList.length
+    const totalCompletedNum = todoList.filter((item) => item.isComplete).length
+    const totalUncompletedNum = totalNum - totalCompletedNum
+    const percentCompleted = totalNum === 0 ? 0 : totalCompletedNum / totalNum
 
     return {
       totalNum,
@@ -25,9 +25,9 @@ const TodoListStats = () => {
     totalCompletedNum,
     totalUncompletedNum,
     percentCompleted
-  } = useRecoilValue(todoListStatsState);
+  } = useRecoilValue(todoListStatsState)
 
-  const formattedPercentCompleted = Math.round(percentCompleted * 100);
+  const formattedPercentCompleted = Math.round(percentCompleted * 100)
 
   return (
     <ul>
@@ -39,4 +39,4 @@ const TodoListStats = () => {
   )
 }
 
-export default TodoListStats;
+export default TodoListStats

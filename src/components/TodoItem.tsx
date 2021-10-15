@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { useRecoilState } from 'recoil'
 import { todoListState } from './TodoListStates'
 import { ITodoType } from '../interface/todo'
@@ -13,16 +13,16 @@ const removeItemAtIndex = (arr: ITodoType[], index: number) => {
 
 const TodoItem = (props: { item: ITodoType }) => {
   const { item } = props
-  const [todoList, setTodoList] = useRecoilState(todoListState);
+  const [todoList, setTodoList] = useRecoilState(todoListState)
   const index = todoList.findIndex((listItem) => listItem === item)
 
-  const editItemText = ({target: {value}}: React.ChangeEvent<HTMLInputElement>) => {
+  const editItemText = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
     const newList = replaceItemAtIndex(todoList, index, {
       ...item,
       text: value
     })
 
-    setTodoList(newList);
+    setTodoList(newList)
   }
 
   const toggleItemCompletion = () => {
@@ -35,15 +35,15 @@ const TodoItem = (props: { item: ITodoType }) => {
   }
 
   const deleteItem = () => {
-    const newList = removeItemAtIndex(todoList, index);
+    const newList = removeItemAtIndex(todoList, index)
 
-    setTodoList(newList);
+    setTodoList(newList)
   }
 
   return (
     <div>
       <input type="text" value={item.text} onChange={editItemText} />
-      <input 
+      <input
         type="checkbox"
         checked={item.isComplete}
         onChange={toggleItemCompletion}
@@ -53,4 +53,4 @@ const TodoItem = (props: { item: ITodoType }) => {
   )
 }
 
-export default TodoItem;
+export default TodoItem

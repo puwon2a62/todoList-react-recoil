@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import { useSetRecoilState } from 'recoil'
 import { todoListState } from './TodoListStates'
 
-let id = 0;
+let id = 0
 const getId = () => {
-  return id++;
+  return id++
 }
 
 const TodoItemCreator = () => {
-  const [inputValue, setInputValue] = useState('');
-  const setTodoList = useSetRecoilState(todoListState);
+  const [inputValue, setInputValue] = useState('')
+  const setTodoList = useSetRecoilState(todoListState)
 
   const addItem = () => {
     setTodoList((oldTodoList) => [
@@ -17,14 +17,14 @@ const TodoItemCreator = () => {
       {
         id: getId(),
         text: inputValue,
-        isComplete: false,
+        isComplete: false
       }
-    ]);
-    setInputValue('');
-  };
+    ])
+    setInputValue('')
+  }
 
-  const onChange = ({target: {value}}: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(value);
+  const onChange = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(value)
   }
 
   return (
