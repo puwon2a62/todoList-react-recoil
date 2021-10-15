@@ -1,4 +1,3 @@
-import React from 'react'
 import { useRecoilValue, selector } from 'recoil'
 import { todoListState, todoListFilterState } from './TodoListStates'
 import TodoItem from './TodoItem'
