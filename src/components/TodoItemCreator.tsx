@@ -3,11 +3,11 @@ import { useSetRecoilState } from 'recoil'
 import { todoListState } from './TodoListStates'
 
 let id = 0;
-function getId() {
+const getId = () => {
   return id++;
 }
 
-function TodoItemCreator() {
+const TodoItemCreator = () => {
   const [inputValue, setInputValue] = useState('');
   const setTodoList = useSetRecoilState(todoListState);
 

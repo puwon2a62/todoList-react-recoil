@@ -6,7 +6,7 @@ export const todoListState = atom<ITodoType[]>({
   default: []
 });
 
-export const todoListFilterState = atom({
+export const todoListFilterState = atom<string>({
   key: 'todoListFilterState',
   default: 'Show All'
 })

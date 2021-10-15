@@ -19,7 +19,7 @@ const todoListStatsState = selector({
   }
 })
 
-function TodoListStats() {
+const TodoListStats = () => {
   const {
     totalNum,
     totalCompletedNum,

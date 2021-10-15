@@ -3,15 +3,15 @@ import { useRecoilState } from 'recoil'
 import { todoListState } from './TodoListStates'
 import { ITodoType } from '../interface/todo'
 
-function replaceItemAtIndex(arr: ITodoType[], index: number, newValue: ITodoType) {
+const replaceItemAtIndex = (arr: ITodoType[], index: number, newValue: ITodoType) => {
   return [...arr.slice(0, index), newValue, ...arr.slice(index + 1)]
 }
 
-function removeItemAtIndex(arr: ITodoType[], index: number) {
+const removeItemAtIndex = (arr: ITodoType[], index: number) => {
   return [...arr.slice(0, index), ...arr.slice(index + 1)]
 }
 
-function TodoItem(props: { item: ITodoType }) {
+const TodoItem = (props: { item: ITodoType }) => {
   const { item } = props
   const [todoList, setTodoList] = useRecoilState(todoListState);
   const index = todoList.findIndex((listItem) => listItem === item)
