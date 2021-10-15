@@ -1,3 +1,4 @@
+import React from 'react'
 import { useRecoilValue, selector } from 'recoil'
 import { todoListState, todoListFilterState } from './TodoListStates'
 import TodoItem from './TodoItem'
@@ -22,7 +23,7 @@ const filteredTodoListState = selector({
   }
 })
 
-function TodoList() {
+const TodoList = () => {
   const todoList = useRecoilValue(filteredTodoListState);
 
   return (

@@ -1,6 +1,7 @@
 import { atom } from 'recoil'
+import { ITodoType } from '../interface/todo'
 
-export const todoListState = atom({
+export const todoListState = atom<ITodoType[]>({
   key: 'todoListState',
   default: []
 });
